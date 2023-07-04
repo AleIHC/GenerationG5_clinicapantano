@@ -1,5 +1,6 @@
 package com.clinica.clinicapantano.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -20,6 +21,10 @@ public class RegistroPacienteEntity {
     //Esta anotación indica la relación de 1 a 1 y permite crear una columna con la llave foránea
     @OneToOne
     private PersonajeEntity personajeEntity;
+
+    @JsonManagedReference//Indicamos que es la dueña de la relación
+    @OneToMany(mappedBy = "pacienteConsulta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ConsultaEntity> consultasPaciente;
 
     //Fechas de auditoria
     @CreationTimestamp//Indica que el atributo siguiente es una fecha de creación

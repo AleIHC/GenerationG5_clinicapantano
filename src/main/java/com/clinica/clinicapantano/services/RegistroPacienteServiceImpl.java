@@ -25,4 +25,9 @@ public class RegistroPacienteServiceImpl implements RegistroPacienteService {
         return registroNuevo;
     }
 
+    @Override
+    public RegistroPacienteEntity buscarPacientePorId(Long id) {
+        return registroPacienteRepository.findById(id).get();
+    }
+
 }

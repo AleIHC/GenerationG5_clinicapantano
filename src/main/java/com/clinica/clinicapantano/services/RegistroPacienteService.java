@@ -11,4 +11,6 @@ public interface RegistroPacienteService {
 
     //Va a guardar un nuevo paciente
     public RegistroPacienteEntity crearNuevoRegistro(RegistroPacienteEntity nuevoPersonaje);
+
+    public RegistroPacienteEntity buscarPacientePorId(Long id);
 }

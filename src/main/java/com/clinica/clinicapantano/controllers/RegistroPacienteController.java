@@ -27,6 +27,11 @@ public class RegistroPacienteController {
         return ResponseEntity.ok(registroPacienteService.obtenerPacientesRegistrados());
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<RegistroPacienteEntity> obtenerPacientePorId(@PathVariable Long id) {
+        return ResponseEntity.ok(registroPacienteService.buscarPacientePorId(id));
+    }
+
     //Crear nuevo registro de paciente
     @PostMapping("/nuevo/{id}")
     public ResponseEntity<RegistroPacienteEntity> crearRegistro(@PathVariable Long id, @RequestBody RegistroPacienteEntity nuevoPaciente) {
