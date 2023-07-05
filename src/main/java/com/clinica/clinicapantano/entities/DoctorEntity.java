@@ -1,5 +1,6 @@
 package com.clinica.clinicapantano.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -37,6 +38,11 @@ public class DoctorEntity {
    @UpdateTimestamp//Indica cuando un atributo se actualizó
    private LocalDateTime updatedAt;
 
+   /**
+   @JsonManagedReference//A quien pertenece la otra entidad
+   @OneToMany(mappedBy = "doctorAsignado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+   private List<ConsultaEntity> consultasProgramadas;
+   **/
 
 
 }

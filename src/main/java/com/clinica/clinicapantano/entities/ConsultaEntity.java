@@ -32,4 +32,7 @@ public class ConsultaEntity {
     @JoinColumn(name= "registro_id")//Indicamos el nombre de la columna donde está la llave foránea
     private RegistroPacienteEntity pacienteConsulta;
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private DoctorEntity doctorAsignado;
 }
