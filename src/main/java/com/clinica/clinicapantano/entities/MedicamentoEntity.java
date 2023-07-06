@@ -21,6 +21,7 @@ public class MedicamentoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long medicamentoId;
+    private String nombreMedicamento;
     private Integer precioMedicamento;
 
     @JsonIgnore
