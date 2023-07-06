@@ -15,7 +15,6 @@ import java.util.List;
 @AllArgsConstructor//Constructor lleno
 @Getter//Accesador
 @Setter//Mutador
-
 public class MedicamentoEntity {
 
     @Id
@@ -28,7 +27,7 @@ public class MedicamentoEntity {
     @ManyToMany
     @JoinTable(
             name = "categorias_medicamentos",
-            joinColumns = @JoinColumn(name = "medicamento_id"),
+            joinColumns = @JoinColumn(name = "id_medicamento"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id")
     )
     private List<CategoriaEntity> categoriasMedicamento;

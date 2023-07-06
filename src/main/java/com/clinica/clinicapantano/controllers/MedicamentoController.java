@@ -32,5 +32,21 @@ public class MedicamentoController {
         return ResponseEntity.ok(medicamentoService.guardarNuevoMedicamento(nuevoMedicamento));
     }
 
+    @GetMapping("/{nombre}")
+    public ResponseEntity<MedicamentoEntity> buscarMedicamentoPorNombre(@PathVariable String nombre) {
+        return ResponseEntity.ok(medicamentoService.buscarMedicamentoPorNombre(nombre));
+    }
+
+    @GetMapping("/lista")
+    public ResponseEntity<List<MedicamentoEntity>> listaDeMedicamentos() {
+        return ResponseEntity.ok(medicamentoService.listaDeMedicamentos());
+    }
+
+    @GetMapping("categoria/{cat}")
+    public  ResponseEntity<List<MedicamentoEntity>> buscarMedicamentosPorCategoria(@PathVariable String cat) {
+        return ResponseEntity.ok(medicamentoService.buscarMedicamentoPorCategoria(cat));
+    }
+
+
 
 }

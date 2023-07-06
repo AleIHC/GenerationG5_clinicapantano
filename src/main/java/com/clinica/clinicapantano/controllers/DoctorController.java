@@ -36,4 +36,9 @@ public class DoctorController {
 
         return ResponseEntity.ok(doctorService.crearNuevoDoctor(nuevoDoctor));
     }
+
+    @GetMapping("especialidad/{esp}")
+    public ResponseEntity<List<DoctorEntity>> buscarPorEspecialidad(@PathVariable String esp) {
+        return ResponseEntity.ok(doctorService.buscarPorEspecialidad(esp));
+    }
 }

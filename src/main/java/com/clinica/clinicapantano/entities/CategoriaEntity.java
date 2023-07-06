@@ -26,7 +26,7 @@ public class CategoriaEntity {
     @JoinTable(
             name = "categorias_medicamentos",
             joinColumns = @JoinColumn(name = "categoria_id"),
-            inverseJoinColumns = @JoinColumn(name = "medicamento_id")
+            inverseJoinColumns = @JoinColumn(name = "id_medicamento")
     )
     private List<MedicamentoEntity> medicamentosCategoria;
 
